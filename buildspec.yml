@@ -20,8 +20,8 @@ phases:
   post_build:
     commands:
       - echo "Pushing Docker images"
-      - docker push "${ECR_REPOSITORY_URI}:latest"
-      - docker push "${ECR_REPOSITORY_URI}:${IMAGE_TAG}"
+      - docker push ${ECR_REPOSITORY_URI}:latest
+      - docker push ${ECR_REPOSITORY_URI}:$IMAGE_TAG
       - printf '{"Version":"1.0","ImageURI":"%s"}' "${ECR_REPOSITORY_URI}:${IMAGE_TAG}" > imageDetail.json
 
 artifacts:
