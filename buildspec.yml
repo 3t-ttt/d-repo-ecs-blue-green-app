@@ -8,8 +8,12 @@ phases:
 
   build:
     commands:
-      - docker build -t $ECR_REPOSITORY_URI:latest .
-      - docker tag $ECR_REPOSITORY_URI:latest $ECR_REPOSITORY_URI:$IMAGE_TAG
+      - echo "ECR_REPOSITORY_URI is set to: $ECR_REPOSITORY_URI"  # Debug statement to check value
+      - echo "Building Docker image"
+      - docker build -t "${ECR_REPOSITORY_URI}:latest" .  # 
+      
+      - echo "Tagging Docker image with commit ID"
+      - docker tag "${ECR_REPOSITORY_URI}:latest" "${ECR_REPOSITORY_URI}:${IMAGE_TAG}"  
 
   post_build:
     commands:
