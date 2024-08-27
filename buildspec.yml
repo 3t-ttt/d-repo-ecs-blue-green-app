@@ -14,9 +14,9 @@ phases:
   build:
     commands:
     - echo "Building Docker image"
-    - docker build -t "${ECR_REPOSITORY_URI}:latest" .
+    - docker build -t $ECR_REPOSITORY_URI:latest .
     - echo "Tagging Docker image with commit ID"
-    - docker tag "${ECR_REPOSITORY_URI}:latest" "${ECR_REPOSITORY_URI}:${IMAGE_TAG}"
+    - docker tag $ECR_REPOSITORY_URI:latest $ECR_REPOSITORY_URI:$IMAGE_TAG
 
   post_build:
     commands:
