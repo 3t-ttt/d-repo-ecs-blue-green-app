@@ -3,7 +3,7 @@ Resources:
   - TargetService:
       Type: AWS::ECS::Service
       Properties:
-        TaskDefinition: "arn:aws:ecs:us-east-1:181633351618:task-definition/ecs-bluegreen:5"
+        TaskDefinition: "arn:aws:ecs:us-east-1:AWS_ACCOUNT_ID:task-definition/bluegreen-taskdefinition:1"
         LoadBalancerInfo:
             ContainerName: "sample-app"
             ContainerPort: 80
