@@ -1,0 +1,28 @@
+{
+    "executionRoleArn": "arn:aws:iam::ACCOUNT-NUMBER:role/ecsTaskExecutionRole", # need to update
+    "containerDefinitions": [
+        {
+            "name": "sample-app", # need to update
+            "image": "ACCOUNT-NUMBER.dkr.ecr.us-east-1.amazonaws.com/ecs-bluegreen:latest", # need to update imageURI
+            "essential": true,
+            "portMappings": [
+                {
+                    "hostPort": 80,
+                    "protocol": "tcp",
+                    "containerPort": 80
+                }
+            ]
+        }
+    ],
+    "requiresCompatibilities": [
+        "FARGATE"
+    ],
+    "networkMode": "awsvpc",
+    "cpu": "256",
+    "memory": "512",
+    "runtimePlatform": {
+        "cpuArchitecture": "X86_64",
+        "operatingSystemFamily": "LINUX"
+    },
+    "family": "ecs-bluegreen" # need to update
+}
