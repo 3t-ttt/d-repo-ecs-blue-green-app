@@ -5,7 +5,7 @@ Resources:
       Properties:
         TaskDefinition: "arn:aws:ecs:us-east-1:181633351618:task-definition/bluegreen-taskdefinition:1"
         LoadBalancerInfo:
-            ContainerName: "sample-app"
+            ContainerName: "bluegreen-demo-app"
             ContainerPort: 80
         PlatformVersion: "LATEST"
 
